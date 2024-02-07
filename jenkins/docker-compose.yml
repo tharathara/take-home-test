@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  jenkins:
+    build: .
+    ports:
+      - "1272:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    networks:
+      - jenkins-net
+
+networks:
+  jenkins-net:
+
+volumes:
+  jenkins_home:
+
