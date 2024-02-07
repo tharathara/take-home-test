@@ -1,5 +1,6 @@
 {
     "family": "take-home-app-task",
+    "networkMode": "awsvpc",  
     "containerDefinitions": [
       {
         "name": "take-home-app-container",
@@ -15,5 +16,4 @@
         ]
       }
     ]
-  }
-  
+}
