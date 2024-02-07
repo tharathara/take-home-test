@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+*.tfvars
+
+# Ignore any local Docker images
+*.tar.gz
