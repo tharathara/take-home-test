@@ -35,4 +35,4 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs
 
 # Switch back to the Jenkins user
-USER jenkins
+USER root
