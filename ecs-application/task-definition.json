@@ -1,0 +1,18 @@
+{
+    "family": "take-home-app-task",
+    "containerDefinitions": [
+      {
+        "name": "take-home-app-container",
+        "image": "533267195373.dkr.ecr.us-east-1.amazonaws.com/take-home:latest",
+        "cpu": 512,
+        "memory": 512,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ]
+      }
+    ]
+  }

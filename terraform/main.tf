@@ -137,6 +137,23 @@ resource "aws_iam_role" "ecs_task_execution" {
   })
 }
 
+# Security Group
+resource "aws_security_group" "ecs_sg" {
+  name        = "ecs-security-group"
+  description = "Security group for ECS instances"
+  vpc_id      = aws_vpc.main.id
+
+  # Define your security group rules as needed
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Add any additional rules as necessary
+}
+
 # IAM policy for ECS service execution
 resource "aws_iam_policy" "ecs_service_execution_policy" {
   name        = "ecs-service-execution-policy"
@@ -184,4 +201,8 @@ resource "aws_iam_policy_attachment" "ecs_service_execution" {
 
 output "ecs_cluster_id" {
   value = aws_ecs_cluster.main.id
+}
+
+output "ecs_security_group_id" {
+  value = aws_security_group.ecs_sg.id
 }
